@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>通信行程卡</title>
+    <link rel="stylesheet" type="text/css" href="xck.css">
+</head>
+
+<body>
+    <div>
+        <img src="static/kuang.jpg" style="width: 393px;"></img>
+        <img class="home" src="static/g2.png"></img>
+        <div class="main">
+            <div class="tel1">
+                <img class="tel1_phone" src="static/withtext@2x.png"></img>
+            </div>
+            <div class="text1">
+                <span class="text_text1"></span>
+            </div>
+            <div class="text2">
+                <span class="text_text2"></span>
+            </div>
+            <div class="tel2">
+                <img class="tel2_phone" src="static/gif_green.gif"></img>
+            </div>
+            <div class="tel3"></div>
+            <div class="tel4_end">
+                <span class="tel4_phone_text">您于前7天内到达或途经:</span>
+                <span class="tel4_phone1_text"></span>
+            </div>
+        </div>
+        <div class="text2_text">
+            <span class="text2_text1">结果包含您在前7天内到访的国家（地区）与停留4小时以上的国内城市</span>
+        </div>
+        <div class="text2_text">
+            <span class="text2_text1">色卡仅对到访地作提醒，不关联健康状况</span>
+        </div>
+        <div class="section">
+            <div class="section1"></div>
+            <div class="section2">
+                <span class="text">本服务联合提供</span>
+            </div>
+            <div class="section3"></div>
+        </div>
+        <div class="imag_section">
+            <img class="caict" src="static/xty0.png"></img>
+            <img class="imag_section1" src="static/dianxin0.png"></img>
+            <img class="imag_section2" src="static/yidong0.png"></img>
+            <img class="imag_section3" src="static/liant0.png"></img>
+            <img class="imag_section4" src="static/guangdian02.png"></img>
+        </div>
+        <div class="service_tel">
+            <span class="service_text"
+                decode="true">客服热线：10000&ensp;/&ensp;10086&ensp;/&ensp;10010&ensp;/&ensp;10099&ensp;</span>
+        </div>
+        <div class="app_bottom">
+            <span class="text1_bottom">一证通查来了！</span>
+            <span class="text2_bottom">立即点击进入</span>
+            <div class="app_bottom_button">
+                <span class="text1_bottom_button">全国移动电话卡"一证通查"</span>
+                <span class="text2_bottom_button">防范诈骗，保护你我</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let date = new Date()
+    let yy = date.getFullYear();
+    let mm = date.getMonth() + 1;
+    mm = (mm < 10 ? "0" + mm : mm);
+    let dd = (date.getDate() < 10 ? "0" + date.getDate() : date.getDate());
+    let hours = (date.getHours() < 10 ? "0" + date.getHours() : date.getHours());
+    let minutes = (date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes());
+    let seconds = (date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds());
+    let shijian = document.getElementsByClassName('text_text2')[0]
+    shijian.innerHTML = '更新于：' + yy + '.' + mm + '.' + dd + '&nbsp;' + hours + ':' + minutes + ':' + seconds
+
+    let phone = prompt("请输入手机号：", "15815462588")
+    phone = phone.substring(0,3) + '****' + phone.substring(7)
+    document.getElementsByClassName('text_text1')[0].innerHTML = phone + "的动态行程卡"
+    let xingcheng = prompt("请输入行程：", "广东省肇庆市")
+    document.getElementsByClassName('tel4_phone1_text')[0].innerHTML = "&nbsp;" + xingcheng
+</script>
+
+</html>
